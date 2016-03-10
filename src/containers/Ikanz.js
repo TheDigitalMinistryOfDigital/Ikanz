@@ -1,7 +1,7 @@
 'use strict';
-import React, {
-    Component
-} from 'react-native';
+import React, { Component } from 'react-native';
+
+import CardDeckContainer from './CardDeckContainer';
 
 class Ikanz extends Component {
     constructor(props) {
@@ -14,3 +14,5 @@ class Ikanz extends Component {
         )
     }
 }
+
+module.exports = Ikanz;
