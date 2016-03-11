@@ -15,7 +15,7 @@ class Search extends Component {
     }
 
     textChanged(text) {
-        this.setState({text})
+        this.setState({text: text.text})
         this.props.getSearchResults(text.text);
     }
 
