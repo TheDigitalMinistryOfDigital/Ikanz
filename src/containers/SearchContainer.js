@@ -57,14 +57,27 @@ class SearchContainer extends Component {
             return picture.id === rowData.id;
         });
         this.props.navigator.push({
-            id: 'cards', props: { currentCardIndex: index }
+            id: 'cards', props: { currentCardIndex: index },
+            title: 'Cards'
         });
+    }
+
+    navCards() {
+        this.props.navigator.push({
+            id: 'cards',
+            title: 'Cards'
+        })
     }
 
     render() {
         return (
             <View style={styles.container}>
-                <Search getSearchResults={this.getSearchResults} />
+                <TouchableHighlight onPress={this.navCards.bind(this)}>
+                    <Text style={{color: '#fff', padding: 10}}>Cards</Text>
+                </TouchableHighlight>
+                <View style={styles.search}>
+                    <Search getSearchResults={this.getSearchResults} />
+                </View>
                 <ListView contentContainerStyle={styles.list}
                           dataSource={this.state.dataSource}
                           renderRow={this.renderRow}
@@ -86,11 +99,11 @@ var styles = StyleSheet.create({
         margin: 10,
         width: 100,
         height: 100,
-        backgroundColor: '#F6F6F6',
+        backgroundColor: '#f6f6f6',
         alignItems: 'center',
         borderWidth: 1,
         borderRadius: 5,
-        borderColor: '#CCC'
+        borderColor: '#ccc'
     },
     thumb: {
         width: 64,
@@ -100,6 +113,16 @@ var styles = StyleSheet.create({
         flex: 1,
         marginTop: 5,
         fontWeight: 'bold'
+    },
+    container: {
+        flex: 1,
+        paddingTop: 30,
+        backgroundColor: '#000'
+    },
+    search: {
+        padding:10,
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 });
 

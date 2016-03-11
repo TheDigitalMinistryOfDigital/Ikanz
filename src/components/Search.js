@@ -23,7 +23,7 @@ class Search extends Component {
         return (
             <View>
                 <TextInput
-                    style={{height: 40, width:300, borderColor: '#000', borderWidth: 1}}
+                    style={styles.input}
                     onChangeText={(text) => this.textChanged({text})}
                     value={this.state.text}
                 />
@@ -31,5 +31,15 @@ class Search extends Component {
         )
     }
 }
+
+const styles = StyleSheet.create({
+    input: {
+        height: 40,
+        width:300,
+        borderColor: '#000',
+        backgroundColor: '#fff',
+        borderWidth: 1
+    }
+});
 
 module.exports = Search;

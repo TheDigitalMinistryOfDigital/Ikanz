@@ -34,17 +34,22 @@ class CardDeckContainer extends Component {
 
     navSearch() {
         this.props.navigator.push({
-            id: 'search'
+            id: 'search',
+            title: 'Search'
         })
     }
 
     renderCardView(card) {
         return (
             <View style={styles.container}>
-                <TouchableHighlight onPress={this.navSearch.bind(this)}>
-                    <Text>Search</Text>
-                </TouchableHighlight>
-                <CardDeck initialCard={card} getNextCard={this.getNextCard} />
+                <View style={{alignItems: 'flex-end'}}>
+                    <TouchableHighlight onPress={this.navSearch.bind(this)}>
+                        <Text style={{color: '#fff', padding: 10}}>Search</Text>
+                    </TouchableHighlight>
+                </View>
+                <View style={styles.cards}>
+                    <CardDeck initialCard={card} getNextCard={this.getNextCard} />
+                </View>
             </View>
         )
     }
@@ -53,9 +58,13 @@ class CardDeckContainer extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        paddingTop: 30,
+        backgroundColor: '#000'
+    },
+    cards: {
+        padding: 100,
         justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#ffffcc'
+        alignItems: 'center'
     }
 });
 

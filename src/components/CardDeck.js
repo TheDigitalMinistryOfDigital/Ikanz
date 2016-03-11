@@ -52,7 +52,8 @@ class CardDeck extends Component {
                     velocity = clamp(vx * -1, 3, 5) * -1;
                 }
 
-                if (Math.abs(this.state.pan.x._value) > SWIPE_THRESHOLD) {
+                if (Math.abs(this.state.pan.x._value) > SWIPE_THRESHOLD ||
+                    Math.abs(this.state.pan.y._value) > SWIPE_THRESHOLD) {
                     Animated.decay(this.state.pan, {
                         velocity: {x: velocity, y: vy},
                         deceleration: 0.98
