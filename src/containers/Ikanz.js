@@ -93,9 +93,9 @@ class Ikanz extends Component {
     renderScene(route, navigator) {
         switch (route.id) {
             case 'cards':
-                return (<CardDeckContainer navigator={navigator} cardData={CARD_DATA} />);
-            case 'getSearchResults':
-                return (<SearchContainer navigator={navigator} cardData={CARD_DATA} />);
+                return (<CardDeckContainer {...route.props} navigator={navigator} cardData={CARD_DATA} />);
+            case 'search':
+                return (<SearchContainer {...route.props} navigator={navigator} cardData={CARD_DATA} />);
         }
     }
 

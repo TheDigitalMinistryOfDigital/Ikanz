@@ -12,7 +12,7 @@ class CardDeckContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentCardIndex: 0
+            currentCardIndex: props.currentCardIndex || 0
         };
         this.getNextCard = this.getNextCard.bind(this);
     }
@@ -34,7 +34,7 @@ class CardDeckContainer extends Component {
 
     navSearch() {
         this.props.navigator.push({
-            id: 'getSearchResults'
+            id: 'search'
         })
     }
 

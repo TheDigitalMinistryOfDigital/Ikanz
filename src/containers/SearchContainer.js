@@ -20,16 +20,13 @@ class SearchContainer extends Component {
         };
         this.getSearchResults = this.getSearchResults.bind(this);
         this.renderRow = this.renderRow.bind(this);
-    }
-
-    componentWillMount() {
-        this.pressData = {};
+        this.pressRow = this.pressRow.bind(this);
     }
 
     getSearchResults(query) {
         let regex = new RegExp(query, 'gi');
         let tags = _.filter(this.props.cardData.tags, (tag) => {
-            return tag.name.match(regex) != null;
+            return tag.name.match(regex) !== null;
         });
 
         let tagIds = _.flatten(_.map(tags, (tag) => {
@@ -45,7 +42,7 @@ class SearchContainer extends Component {
 
     renderRow(rowData, sectionID, rowID) {
         return (
-            <TouchableHighlight onPress={() => this.pressRow(rowID)} underlayColor='rgba(0,0,0,0)'>
+            <TouchableHighlight onPress={() => this.pressRow(rowData)} underlayColor='rgba(0,0,0,0)'>
                 <View>
                     <View style={styles.row}>
                         <Image style={styles.thumb} source={rowData.src} />
@@ -56,6 +53,15 @@ class SearchContainer extends Component {
                 </View>
             </TouchableHighlight>
         );
+    }
+
+    pressRow(rowData) {
+        let index = _.findIndex(this.props.cardData.pictures, (picture) => {
+            return picture.id === rowData.id;
+        });
+        this.props.navigator.push({
+            id: 'cards', props: { currentCardIndex: index }
+        });
     }
 
     render() {
