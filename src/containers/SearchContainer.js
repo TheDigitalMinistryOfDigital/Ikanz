@@ -46,9 +46,6 @@ class SearchContainer extends Component {
                 <View>
                     <View style={styles.row}>
                         <Image style={styles.thumb} source={rowData.src} />
-                        <Text style={styles.text}>
-                            {rowData.id}
-                        </Text>
                     </View>
                 </View>
             </TouchableHighlight>
