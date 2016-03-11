@@ -23,7 +23,7 @@ class Search extends Component {
         return (
             <View>
                 <TextInput
-                    style={{height: 40, width:300, borderColor: 'gray', borderWidth: 1}}
+                    style={{height: 40, width:300, borderColor: '#000', borderWidth: 1}}
                     onChangeText={(text) => this.textChanged({text})}
                     value={this.state.text}
                 />

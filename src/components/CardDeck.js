@@ -10,7 +10,7 @@ import React, {
 import clamp from 'clamp';
 import Card from './Card'
 
-const SWIPE_THRESHOLD = 120;
+const SWIPE_THRESHOLD = 20;
 
 class CardDeck extends Component {
     constructor(props) {

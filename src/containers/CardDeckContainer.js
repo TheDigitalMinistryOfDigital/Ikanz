@@ -18,21 +18,18 @@ class CardDeckContainer extends Component {
     }
 
     getNextCard() {
-        let i = this.state.currentCardIndex + 1;
+        let i = (this.state.currentCardIndex === (this.props.cards.pictures.length - 1)) ? 0 : this.state.currentCardIndex + 1;
         this.setState({
             currentCardIndex: i
         });
-        return this.props.cards[this.state.currentCardIndex];
+        return this.props.cards.pictures[this.state.currentCardIndex];
     }
 
     render() {
         if (this.props.cards === null || (typeof this.props.cards == 'undefined')) {
             return <Text>Loading...</Text>
         }
-        if(this.state.currentCardIndex === this.props.cards.length) {
-            return <Text>No cards!</Text>;
-        }
-        return this.renderCardView(this.props.cards[0]);
+        return this.renderCardView(this.props.cards.pictures[this.state.currentCardIndex]);
     }
 
     navSearch() {
