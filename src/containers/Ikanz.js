@@ -7,20 +7,20 @@ import React, {
 import CardDeckContainer from './CardDeckContainer';
 import SearchContainer from './SearchContainer';
 
-const cards = {
+const CARD_DATA = {
     pictures: [
-        { id: 1, picture: require('../img/cogs_technology_mechanics_industry_engineer_process.png') },
-        { id: 2, picture: require('../img/factory_industry_production_manfacturing_commerce.png') },
-        { id: 3, picture: require('../img/flag_signal_nation_identification_start.png') },
-        { id: 4, picture: require('../img/light_bulb_idea_inspiration_innovation_thought_invention_brightness.png') },
-        { id: 5, picture: require('../img/magnet_appeal_attract_bait_attraction_energy_strength.png') },
-        { id: 6, picture: require('../img/magnifying_glass_focus_search_detail_specialisation.png') },
-        { id: 7, picture: require('../img/mountain_objective_obstacle_challenge.png') },
-        { id: 8, picture: require('../img/puzzle_piece_part_fitting_interlocking_detail_share_collaborate.png') },
-        { id: 9, picture: require('../img/target_objective_hit_solution_clarity.png') },
-        { id: 10, picture: require('../img/carrying_hauling_holding.png') },
-        { id: 11, picture: require('../img/heavy_overstretched.png') },
-        { id: 12, picture: require('../img/walking_running.png') }
+        { id: 1, src: require('../img/cogs_technology_mechanics_industry_engineer_process.png') },
+        { id: 2, src: require('../img/factory_industry_production_manfacturing_commerce.png') },
+        { id: 3, src: require('../img/flag_signal_nation_identification_start.png') },
+        { id: 4, src: require('../img/light_bulb_idea_inspiration_innovation_thought_invention_brightness.png') },
+        { id: 5, src: require('../img/magnet_appeal_attract_bait_attraction_energy_strength.png') },
+        { id: 6, src: require('../img/magnifying_glass_focus_search_detail_specialisation.png') },
+        { id: 7, src: require('../img/mountain_objective_obstacle_challenge.png') },
+        { id: 8, src: require('../img/puzzle_piece_part_fitting_interlocking_detail_share_collaborate.png') },
+        { id: 9, src: require('../img/target_objective_hit_solution_clarity.png') },
+        { id: 10, src: require('../img/carrying_hauling_holding.png') },
+        { id: 11, src: require('../img/heavy_overstretched.png') },
+        { id: 12, src: require('../img/walking_running.png') }
     ],
     tags: [
         { name: 'cogs', pictures: [1] },
@@ -93,9 +93,9 @@ class Ikanz extends Component {
     renderScene(route, navigator) {
         switch (route.id) {
             case 'cards':
-                return (<CardDeckContainer navigator={navigator} cards={cards} />);
+                return (<CardDeckContainer navigator={navigator} cardData={CARD_DATA} />);
             case 'getSearchResults':
-                return (<SearchContainer navigator={navigator} cards={cards} />);
+                return (<SearchContainer navigator={navigator} cardData={CARD_DATA} />);
         }
     }
 

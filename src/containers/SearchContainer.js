@@ -9,60 +9,53 @@ import React, {
     View
 } from 'react-native';
 import Search from '../components/Search'
+import _ from 'underscore'
 
 class SearchContainer extends Component {
     constructor(props) {
         super(props);
         var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         this.state = {
-            term: '',
-            results: [],
-            dataSource: ds.cloneWithRows(this.genRows({}))
+            dataSource: ds.cloneWithRows(this.props.cardData.pictures)
         };
         this.getSearchResults = this.getSearchResults.bind(this);
-        this.pressRow = this.pressRow.bind(this);
-        this.genRows = this.genRows.bind(this);
         this.renderRow = this.renderRow.bind(this);
     }
 
-    getSearchResults() {
-        let t = this.state.term;
-        // do search
-        this.setState({
-            results: [t]
+    componentWillMount() {
+        this.pressData = {};
+    }
+
+    getSearchResults(query) {
+        let regex = new RegExp(query, 'gi');
+        let tags = _.filter(this.props.cardData.tags, (tag) => {
+            return tag.name.match(regex) != null;
         });
+
+        let tagIds = _.flatten(_.map(tags, (tag) => {
+            return tag.pictures;
+        }));
+
+        this.setState({dataSource: this.state.dataSource.cloneWithRows(
+            _.filter(this.props.cardData.pictures, (picture) => {
+                return _.indexOf(tagIds, picture.id) > -1;
+            })
+        )});
     }
 
     renderRow(rowData, sectionID, rowID) {
-        var imgSource = this.props.cards[0].picture;
         return (
             <TouchableHighlight onPress={() => this.pressRow(rowID)} underlayColor='rgba(0,0,0,0)'>
                 <View>
                     <View style={styles.row}>
-                        <Image style={styles.thumb} source={imgSource} />
+                        <Image style={styles.thumb} source={rowData.src} />
                         <Text style={styles.text}>
-                            {rowData}
+                            {rowData.id}
                         </Text>
                     </View>
                 </View>
             </TouchableHighlight>
         );
-    }
-
-    genRows(pressData) {
-        var dataBlob = [];
-        for (var ii = 0; ii < 100; ii++) {
-            var pressedText = pressData[ii] ? ' (X)' : '';
-            dataBlob.push('Cell ' + ii + pressedText);
-        }
-        return dataBlob;
-    }
-
-    pressRow(rowID) {
-        this._pressData[rowID] = !this._pressData[rowID];
-        this.setState({dataSource: this.state.dataSource.cloneWithRows(
-            this.genRows(this._pressData)
-        )});
     }
 
     render() {

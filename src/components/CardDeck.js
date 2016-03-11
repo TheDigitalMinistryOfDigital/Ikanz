@@ -87,7 +87,7 @@ class CardDeck extends Component {
 
         return (
             <View>
-                <Card picture={this.state.currentCard.picture}
+                <Card picture={this.state.currentCard.src}
                       animationStyles={animatedCardStyles}
                       panResponder={this._panResponder} />
             </View>
