@@ -2,6 +2,7 @@
 import React, {
     Component,
     StyleSheet,
+    TouchableHighlight,
     Text,
     View
 } from 'react-native';
@@ -12,7 +13,7 @@ class CardDeckContainer extends Component {
         super(props);
         this.state = {
             currentCardIndex: 0
-        }
+        };
         this.getNextCard = this.getNextCard.bind(this);
     }
 
@@ -34,9 +35,18 @@ class CardDeckContainer extends Component {
         return this.renderCardView(this.props.cards[0]);
     }
 
+    navSearch() {
+        this.props.navigator.push({
+            id: 'getSearchResults'
+        })
+    }
+
     renderCardView(card) {
         return (
             <View style={styles.container}>
+                <TouchableHighlight onPress={this.navSearch.bind(this)}>
+                    <Text>Search</Text>
+                </TouchableHighlight>
                 <CardDeck initialCard={card} getNextCard={this.getNextCard} />
             </View>
         )

@@ -14,12 +14,17 @@ class Search extends Component {
         }
     }
 
+    textChanged(text) {
+        this.setState({text})
+        this.props.getSearchResults(text);
+    }
+
     render() {
         return (
             <View>
                 <TextInput
-                    style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-                    onChangeText={(text) => this.setState({text})}
+                    style={{height: 40, width:300, borderColor: 'gray', borderWidth: 1}}
+                    onChangeText={(text) => this.textChanged({text})}
                     value={this.state.text}
                 />
             </View>

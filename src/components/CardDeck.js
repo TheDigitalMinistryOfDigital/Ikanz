@@ -86,9 +86,11 @@ class CardDeck extends Component {
         let animatedCardStyles = {transform: [{translateX}, {translateY}, {rotate}, {scale}], opacity};
 
         return (
-            <Card picture={this.state.currentCard.picture}
-                  animationStyles={animatedCardStyles}
-                  panResponder={this._panResponder} />
+            <View>
+                <Card picture={this.state.currentCard.picture}
+                      animationStyles={animatedCardStyles}
+                      panResponder={this._panResponder} />
+            </View>
         );
     }
 }
