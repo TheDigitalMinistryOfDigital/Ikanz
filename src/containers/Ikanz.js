@@ -5,6 +5,7 @@ import React, {
 } from 'react-native';
 
 import CardDeckContainer from './CardDeckContainer';
+import SearchContainer from './SearchContainer';
 
 const cards = [
     { picture: require('../img/cogs_technology_mechanics_industry_engineer_process.png'), tags: ['1'] },
@@ -31,7 +32,7 @@ class Ikanz extends Component {
             case 'cards':
                 return (<CardDeckContainer navigator={navigator} cards={cards}/>);
             case 'search':
-                return (<Search navigator={navigator} />);
+                return (<SearchContainer navigator={navigator} />);
         }
     }
 
