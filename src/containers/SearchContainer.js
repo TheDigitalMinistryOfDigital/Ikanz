@@ -81,7 +81,8 @@ class SearchContainer extends Component {
                 </View>
                 <ListView contentContainerStyle={styles.list}
                           dataSource={this.state.dataSource}
-                          renderRow={this.renderRow} />
+                          renderRow={this.renderRow}
+                          enableEmptySections={true} />
             </View>
         )
     }
