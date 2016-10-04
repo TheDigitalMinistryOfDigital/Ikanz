@@ -44,7 +44,7 @@ class CardDeckContainer extends Component {
             <View style={styles.container}>
                 <View style={{alignItems: 'flex-end'}}>
                     <TouchableHighlight onPress={this.navSearch.bind(this)}>
-                        <Text style={{color: '#fff', padding: 10}}>Search</Text>
+                        <Text style={{color: '#000', padding: 10}}>Search</Text>
                     </TouchableHighlight>
                 </View>
                 <View style={styles.cards}>
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: 30,
-        backgroundColor: '#000'
+        backgroundColor: '#fff'
     },
     cards: {
         padding: 100,

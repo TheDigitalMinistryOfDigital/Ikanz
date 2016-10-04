@@ -43,10 +43,8 @@ class SearchContainer extends Component {
     renderRow(rowData, sectionID, rowID) {
         return (
             <TouchableHighlight onPress={() => this.pressRow(rowData)} underlayColor='rgba(0,0,0,0)'>
-                <View>
-                    <View style={styles.row}>
-                        <Image style={styles.thumb} source={rowData.src} />
-                    </View>
+                <View style={styles.item}>
+                    <Image style={styles.picture} source={rowData.src} />
                 </View>
             </TouchableHighlight>
         );
@@ -56,6 +54,7 @@ class SearchContainer extends Component {
         let index = _.findIndex(this.props.cardData.pictures, (picture) => {
             return picture.id === rowData.id;
         });
+
         this.props.navigator.push({
             id: 'cards', props: { currentCardIndex: index },
             title: 'Cards'
@@ -72,57 +71,51 @@ class SearchContainer extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <TouchableHighlight onPress={this.navCards.bind(this)}>
-                    <Text style={{color: '#fff', padding: 10}}>Cards</Text>
-                </TouchableHighlight>
+                <View style={{alignItems: 'flex-start'}}>
+                    <TouchableHighlight onPress={this.navCards.bind(this)}>
+                        <Text style={{color: '#111', padding: 10}}>Ikanz</Text>
+                    </TouchableHighlight>
+                </View>
                 <View style={styles.search}>
                     <Search getSearchResults={this.getSearchResults} />
                 </View>
                 <ListView contentContainerStyle={styles.list}
                           dataSource={this.state.dataSource}
-                          renderRow={this.renderRow}
-                />
+                          renderRow={this.renderRow} />
             </View>
         )
     }
 }
 
 var styles = StyleSheet.create({
-    list: {
-        justifyContent: 'center',
-        flexDirection: 'row',
-        flexWrap: 'wrap'
-    },
-    row: {
-        justifyContent: 'center',
-        padding: 5,
-        margin: 10,
-        width: 100,
-        height: 100,
-        backgroundColor: '#f6f6f6',
-        alignItems: 'center',
-        borderWidth: 1,
-        borderRadius: 5,
-        borderColor: '#ccc'
-    },
-    thumb: {
-        width: 64,
-        height: 64
+    container: {
+        paddingTop: 30,
+        backgroundColor: '#fff'
     },
     text: {
-        flex: 1,
         marginTop: 5,
         fontWeight: 'bold'
     },
-    container: {
-        flex: 1,
-        paddingTop: 30,
-        backgroundColor: '#000'
-    },
     search: {
-        padding:10,
+        padding: 10,
         alignItems: 'center',
         justifyContent: 'center'
+    },
+    list: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        flexWrap: 'wrap'
+    },
+    item: {
+        margin: 10,
+        padding: 5,
+        width: 80,
+        height: 80
+    },
+    picture: {
+        width: 64,
+        height: 64
     }
 });
 

@@ -24,11 +24,10 @@ class Card extends Component {
 
 const styles = StyleSheet.create({
     card: {
-        width: 282,
-        height: 282,
-        borderStyle: 'solid',
-        borderColor: '#cccccc',
-        borderWidth: 1
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     picture: {
         width: 280,
