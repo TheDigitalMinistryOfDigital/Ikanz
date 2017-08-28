@@ -8,8 +8,17 @@ class CardDeckContainer extends Component {
     constructor(props) {
         super(props);
         const { params } = this.props.navigation.state;
+
+        let currentCardIndex = 0;
+        if(params !== null
+            && typeof params != 'undefined'
+            && params.currentCardIndex !== null
+            && typeof params.currentCardIndex != 'undefined') {
+            currentCardIndex = params.currentCardIndex;
+        }
+
         this.state = {
-            currentCardIndex: params.currentCardIndex || 0,
+            currentCardIndex: currentCardIndex,
             cardData: Data
         };
         this.getNextCard = this.getNextCard.bind(this);
