@@ -1,12 +1,6 @@
 'use strict';
-import React, { Component } from 'react';
-import {
-    Animated,
-    Image,
-    StyleSheet,
-    Text,
-    View
-} from 'react-native';
+import React, {Component} from "react";
+import {Animated, Image, StyleSheet} from "react-native";
 
 class Card extends Component {
     constructor(props) {

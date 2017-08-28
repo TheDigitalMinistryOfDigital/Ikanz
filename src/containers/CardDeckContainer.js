@@ -1,49 +1,43 @@
 'use strict';
-import React, { Component } from 'react';
-import {
-    StyleSheet,
-    TouchableHighlight,
-    Text,
-    View
-} from 'react-native';
-import CardDeck from '../components/CardDeck'
+import React, {Component} from "react";
+import {StyleSheet, Text, TouchableHighlight, View} from "react-native";
+import CardDeck from "../components/CardDeck";
+import Data from './Data';
 
 class CardDeckContainer extends Component {
     constructor(props) {
         super(props);
+        const { params } = this.props.navigation.state;
         this.state = {
-            currentCardIndex: props.currentCardIndex || 0
+            currentCardIndex: params.currentCardIndex || 0,
+            cardData: Data
         };
         this.getNextCard = this.getNextCard.bind(this);
     }
 
     getNextCard() {
-        let i = (this.state.currentCardIndex === (this.props.cardData.pictures.length - 1)) ? 0 : this.state.currentCardIndex + 1;
+        let i = (this.state.currentCardIndex === (this.state.cardData.pictures.length - 1)) ? 0 : this.state.currentCardIndex + 1;
         this.setState({
             currentCardIndex: i
         });
-        return this.props.cardData.pictures[this.state.currentCardIndex];
+        return this.state.cardData.pictures[this.state.currentCardIndex];
     }
 
     render() {
-        if (this.props.cardData === null || (typeof this.props.cardData == 'undefined')) {
-            return <Text>Loading...</Text>
+        const { params } = this.props.navigation.state;
+        if (this.state.cardData === null || (typeof this.state.cardData == 'undefined')) {
+            return <Text>Loading... { params }</Text>
         }
-        return this.renderCardView(this.props.cardData.pictures[this.state.currentCardIndex]);
+        return this.renderCardView(this.state.cardData.pictures[this.state.currentCardIndex]);
     }
 
-    navSearch() {
-        this.props.navigator.push({
-            id: 'search',
-            title: 'Search'
-        })
-    }
 
     renderCardView(card) {
+        const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
                 <View style={{alignItems: 'flex-end'}}>
-                    <TouchableHighlight onPress={this.navSearch.bind(this)}>
+                    <TouchableHighlight onPress={() => navigate('Search')}>
                         <Text style={{color: '#000', padding: 10}}>Search</Text>
                     </TouchableHighlight>
                 </View>

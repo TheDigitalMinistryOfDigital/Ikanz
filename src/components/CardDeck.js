@@ -1,14 +1,8 @@
 'use strict';
-import React, { Component } from 'react';
-import {
-    Animated,
-    PanResponder,
-    StyleSheet,
-    Text,
-    View
-} from 'react-native';
-import clamp from 'clamp';
-import Card from './Card'
+import React, {Component} from "react";
+import {Animated, PanResponder, View} from "react-native";
+import clamp from "clamp";
+import Card from "./Card";
 
 const SWIPE_THRESHOLD = 20;
 

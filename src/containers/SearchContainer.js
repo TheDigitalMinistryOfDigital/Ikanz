@@ -1,22 +1,16 @@
 'use strict';
-import React, { Component } from 'react';
-import {
-    Image,
-    ListView,
-    StyleSheet,
-    Text,
-    TouchableHighlight,
-    View
-} from 'react-native';
-import Search from '../components/Search'
-import _ from 'underscore'
+import React, {Component} from "react";
+import {Image, ListView, StyleSheet, Text, TouchableHighlight, View} from "react-native";
+import Search from "../components/Search";
+import _ from "underscore";
+import Data from './Data';
 
 class SearchContainer extends Component {
     constructor(props) {
         super(props);
-        var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+        let ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         this.state = {
-            dataSource: ds.cloneWithRows(this.props.cardData.pictures)
+            dataSource: ds.cloneWithRows(Data.pictures)
         };
         this.getSearchResults = this.getSearchResults.bind(this);
         this.renderRow = this.renderRow.bind(this);
@@ -25,7 +19,8 @@ class SearchContainer extends Component {
 
     getSearchResults(query) {
         let regex = new RegExp(query, 'gi');
-        let tags = _.filter(this.props.cardData.tags, (tag) => {
+
+        let tags = _.filter(Data.tags, (tag) => {
             return tag.name.match(regex) !== null;
         });
 
@@ -34,7 +29,7 @@ class SearchContainer extends Component {
         }));
 
         this.setState({dataSource: this.state.dataSource.cloneWithRows(
-            _.filter(this.props.cardData.pictures, (picture) => {
+            _.filter(Data.pictures, (picture) => {
                 return _.indexOf(tagIds, picture.id) > -1;
             })
         )});
@@ -51,28 +46,20 @@ class SearchContainer extends Component {
     }
 
     pressRow(rowData) {
-        let index = _.findIndex(this.props.cardData.pictures, (picture) => {
+        let index = _.findIndex(Data.pictures, (picture) => {
             return picture.id === rowData.id;
         });
 
-        this.props.navigator.push({
-            id: 'cards', props: { currentCardIndex: index },
-            title: 'Cards'
-        });
-    }
-
-    navCards() {
-        this.props.navigator.push({
-            id: 'cards',
-            title: 'Cards'
-        })
+        const { navigate } = this.props.navigation;
+        navigate('Cards', { currentCardIndex: index });
     }
 
     render() {
+        const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
                 <View style={{alignItems: 'flex-start'}}>
-                    <TouchableHighlight onPress={this.navCards.bind(this)}>
+                    <TouchableHighlight onPress={() => navigate('Cards', { cardData: Data })}>
                         <Text style={{color: '#111', padding: 10}}>Ikanz</Text>
                     </TouchableHighlight>
                 </View>
