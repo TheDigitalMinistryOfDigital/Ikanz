@@ -1,7 +1,6 @@
 'use strict';
 import React, {Component} from "react";
 import {Animated, PanResponder, View} from "react-native";
-import clamp from "clamp";
 import Card from "./Card";
 
 const SWIPE_THRESHOLD = 20;
@@ -40,10 +39,10 @@ class CardDeck extends Component {
                 var velocity;
 
                 if (vx >= 0) {
-                    velocity = clamp(vx, 3, 5);
+                    velocity = this.clamp(vx, 3, 5);
                 }
                 else if (vx < 0) {
-                    velocity = clamp(vx * -1, 3, 5) * -1;
+                    velocity = this.clamp(vx * -1, 3, 5) * -1;
                 }
 
                 if (Math.abs(this.state.pan.x._value) > SWIPE_THRESHOLD ||
@@ -61,6 +60,10 @@ class CardDeck extends Component {
                 }
             }
         });
+    }
+
+    clamp(value, min, max) {
+        return min < max  ? (value < min ? min : value > max ? max : value) : (value < max ? max : value > min ? min : value)
     }
 
     resetState() {
@@ -84,7 +87,9 @@ class CardDeck extends Component {
             <View>
                 <Card picture={this.state.currentCard.src}
                       animationStyles={animatedCardStyles}
-                      panResponder={this._panResponder} />
+                      panResponder={this._panResponder}
+                      style={{zIndex: 1}}
+                />
             </View>
         );
     }

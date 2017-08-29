@@ -22,6 +22,10 @@ class Search extends Component {
                     style={styles.input}
                     onChangeText={(text) => this.textChanged({text})}
                     value={this.state.text}
+                    autoCorrect={false}
+                    autoCapitalize={"none"}
+                    maxLength={50}
+                    placeholder={"Search"}
                 />
             </View>
         )

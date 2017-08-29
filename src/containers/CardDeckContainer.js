@@ -45,9 +45,9 @@ class CardDeckContainer extends Component {
         const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
-                <View style={{alignItems: 'flex-end'}}>
+                <View style={styles.header}>
                     <TouchableHighlight onPress={() => navigate('Search')}>
-                        <Text style={{color: '#000', padding: 10}}>Search</Text>
+                        <Text style={styles.searchButton}>List</Text>
                     </TouchableHighlight>
                 </View>
                 <View style={styles.cards}>
@@ -61,13 +61,23 @@ class CardDeckContainer extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: 30,
+        paddingTop: 10,
         backgroundColor: '#fff'
     },
     cards: {
         padding: 100,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    searchButton: {
+        color: '#111',
+        padding: 10,
+        fontSize: 18
+    },
+    header: {
+        alignItems: 'flex-end',
+        paddingRight: 10,
+        zIndex: 2
     }
 });
 

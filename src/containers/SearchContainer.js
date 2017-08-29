@@ -2,7 +2,7 @@
 import React, {Component} from "react";
 import {Image, ListView, StyleSheet, Text, TouchableHighlight, View} from "react-native";
 import Search from "../components/Search";
-import _ from "underscore";
+import _ from "lodash";
 import Data from './Data';
 
 class SearchContainer extends Component {
@@ -18,7 +18,7 @@ class SearchContainer extends Component {
     }
 
     getSearchResults(query) {
-        let regex = new RegExp(query, 'gi');
+        let regex = new RegExp(_.escapeRegExp(query), 'gi');
 
         let tags = _.filter(Data.tags, (tag) => {
             return tag.name.match(regex) !== null;
@@ -58,9 +58,9 @@ class SearchContainer extends Component {
         const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
-                <View style={{alignItems: 'flex-start'}}>
+                <View style={styles.header}>
                     <TouchableHighlight onPress={() => navigate('Cards', { cardData: Data })}>
-                        <Text style={{color: '#111', padding: 10}}>Ikanz</Text>
+                        <Text style={styles.cardsButton}>Ikanz</Text>
                     </TouchableHighlight>
                 </View>
                 <View style={styles.search}>
@@ -75,9 +75,9 @@ class SearchContainer extends Component {
     }
 }
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
-        paddingTop: 30,
+        paddingTop: 10,
         backgroundColor: '#fff'
     },
     text: {
@@ -97,13 +97,22 @@ var styles = StyleSheet.create({
     },
     item: {
         margin: 10,
-        padding: 5,
+        padding: 4,
         width: 80,
         height: 80
     },
     picture: {
         width: 64,
         height: 64
+    },
+    cardsButton: {
+        color: '#111',
+        padding: 10,
+        fontSize: 18
+    },
+    header: {
+        alignItems: 'flex-start',
+        paddingLeft: 10
     }
 });
 

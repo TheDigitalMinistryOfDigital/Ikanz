@@ -3,10 +3,6 @@ import React, {Component} from "react";
 import {Animated, Image, StyleSheet} from "react-native";
 
 class Card extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <Animated.View style={[styles.card, this.props.animationStyles]} {...this.props.panResponder.panHandlers}>
