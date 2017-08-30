@@ -480,9 +480,6 @@ export default Data = {
         name: "manfacturing",
         pictures: [17]
     }, {
-        name: "commerce",
-        pictures: [17]
-    }, {
         name: "film",
         pictures: [18]
     }, {
@@ -666,9 +663,6 @@ export default Data = {
         name: "ladder",
         pictures: [27]
     }, {
-        name: "help",
-        pictures: [27, 28]
-    }, {
         name: "climb",
         pictures: [27]
     }, {
@@ -681,20 +675,8 @@ export default Data = {
         name: "life",
         pictures: [28]
     }, {
-        name: "rescue",
-        pictures: [28]
-    }, {
-        name: "safety",
-        pictures: [28, 31]
-    }, {
-        name: "help",
-        pictures: [28]
-    }, {
         name: "hotline",
         pictures: [28]
-    }, {
-        name: "light",
-        pictures: [29, 30]
     }, {
         name: "bulb",
         pictures: [29]
@@ -706,9 +688,6 @@ export default Data = {
         pictures: [29]
     }, {
         name: "innovation",
-        pictures: [29]
-    }, {
-        name: "thought",
         pictures: [29]
     }, {
         name: "invention",
@@ -735,9 +714,6 @@ export default Data = {
         name: "effect",
         pictures: [30]
     }, {
-        name: "light",
-        pictures: [30]
-    }, {
         name: "summary",
         pictures: [30]
     }, {
@@ -745,9 +721,6 @@ export default Data = {
         pictures: [30]
     }, {
         name: "lock",
-        pictures: [31]
-    }, {
-        name: "safety",
         pictures: [31]
     }, {
         name: "security",
@@ -807,16 +780,10 @@ export default Data = {
         name: "journalist",
         pictures: [34]
     }, {
-        name: "media",
-        pictures: [34]
-    }, {
         name: "news",
         pictures: [34]
     }, {
         name: "interview",
-        pictures: [34]
-    }, {
-        name: "recording",
         pictures: [34]
     }, {
         name: "mountain",
@@ -824,9 +791,6 @@ export default Data = {
     }, {
         name: "objective",
         pictures: [35, 44, 47]
-    }, {
-        name: "obstacle",
-        pictures: [35, 41]
     }, {
         name: "challenge",
         pictures: [35]
@@ -841,9 +805,6 @@ export default Data = {
         pictures: [36]
     }, {
         name: "letter",
-        pictures: [36]
-    }, {
-        name: "result",
         pictures: [36]
     }, {
         name: "minutes",
@@ -886,9 +847,6 @@ export default Data = {
         pictures: [38]
     }, {
         name: "interlocking",
-        pictures: [38]
-    }, {
-        name: "detail",
         pictures: [38]
     }, {
         name: "share",
@@ -951,9 +909,6 @@ export default Data = {
         name: "structure",
         pictures: [41]
     }, {
-        name: "obstacle",
-        pictures: [41]
-    }, {
         name: "catch",
         pictures: [41]
     }, {
@@ -971,9 +926,6 @@ export default Data = {
     }, {
         name: "battle",
         pictures: [42]
-    }, {
-        name: "victory",
-        pictures: [42, 48]
     }, {
         name: "aggression",
         pictures: [42]
@@ -1008,13 +960,7 @@ export default Data = {
         name: "target",
         pictures: [44]
     }, {
-        name: "objective",
-        pictures: [44, 47]
-    }, {
         name: "hit",
-        pictures: [44]
-    }, {
-        name: "solution",
         pictures: [44]
     }, {
         name: "clarity",
@@ -1083,9 +1029,6 @@ export default Data = {
         name: "riches",
         pictures: [47]
     }, {
-        name: "objective",
-        pictures: [47]
-    }, {
         name: "goal",
         pictures: [47]
     }, {
@@ -1093,12 +1036,6 @@ export default Data = {
         pictures: [48]
     }, {
         name: "award",
-        pictures: [48]
-    }, {
-        name: "victory",
-        pictures: [48]
-    }, {
-        name: "reward",
         pictures: [48]
     }, {
         name: "prize",

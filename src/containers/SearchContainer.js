@@ -69,7 +69,8 @@ class SearchContainer extends Component {
                 <ListView contentContainerStyle={styles.list}
                           dataSource={this.state.dataSource}
                           renderRow={this.renderRow}
-                          enableEmptySections={true} />
+                          enableEmptySections={true}
+                          initialListSize={12} />
             </View>
         )
     }
@@ -78,7 +79,8 @@ class SearchContainer extends Component {
 const styles = StyleSheet.create({
     container: {
         paddingTop: 10,
-        backgroundColor: '#fff'
+        backgroundColor: '#fff',
+        flex: 1
     },
     text: {
         marginTop: 5,
@@ -103,7 +105,8 @@ const styles = StyleSheet.create({
     },
     picture: {
         width: 64,
-        height: 64
+        height: 64,
+        flex: 1
     },
     cardsButton: {
         color: '#111',
