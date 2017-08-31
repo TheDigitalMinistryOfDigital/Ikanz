@@ -1,158 +1,158 @@
 export default Data = {
     pictures: [{
         id: 1,
-        src: require('../img/airplane_travel_trip_vacation_global_speed_path_movement.png')
+        src: require('../img/1.png')
     },
         {
             id: 2,
-            src: require('../img/anchor_safety_decision_secure_position.png')
+            src: require('../img/2.png')
         }, {
             id: 3,
-            src: require('../img/bank_notes_money_finance_commerce_budget_payment_wages_salary.png')
+            src: require('../img/3.png')
         }, {
             id: 4,
-            src: require('../img/bomb_explode_attack_risk_danger_pressure_breakdown.png')
+            src: require('../img/4.png')
         }, {
             id: 5,
-            src: require('../img/brain_intellectual_thinking_intelligence_thought_smart_ideas.png')
+            src: require('../img/5.png')
         }, {
             id: 6,
-            src: require('../img/cactus_dryness_desert_defence_resisting.png')
+            src: require('../img/6.png')
         }, {
             id: 7,
-            src: require('../img/candle_light_energy_belief_hope_trust_glowing.png')
+            src: require('../img/7.png')
         }, {
             id: 8,
-            src: require('../img/carrying_hauling_holding.png')
+            src: require('../img/8.png')
         }, {
             id: 9,
-            src: require('../img/champagne_wine_celebrate_success_begin_party_farewell_welcome_alcohol.png')
+            src: require('../img/9.png')
         }, {
             id: 10,
-            src: require('../img/clover_lucky_special.png')
+            src: require('../img/10.png')
         }, {
             id: 11,
-            src: require('../img/cogs_technology_mechanics_industry_engineer_process.png')
+            src: require('../img/11.png')
         }, {
             id: 12,
-            src: require('../img/compass_orientation_leadership_direction_course.png')
+            src: require('../img/12.png')
         }, {
             id: 13,
-            src: require('../img/coupon_ticket_entry.png')
+            src: require('../img/13.png')
         }, {
             id: 14,
-            src: require('../img/crown_king_domination_award_customer.png')
+            src: require('../img/14.png')
         }, {
             id: 15,
-            src: require('../img/door_opening_opportunity_option_chance_way_out_exit_invite_entrance_unknown_curiosity.png')
+            src: require('../img/15.png')
         }, {
             id: 16,
-            src: require('../img/eye_sense_sight_seeing_attentiveness_visualise_visible_curiosity_interest.png')
+            src: require('../img/16.png')
         }, {
             id: 17,
-            src: require('../img/factory_industry_production_manfacturing_commerce.png')
+            src: require('../img/17.png')
         }, {
             id: 18,
-            src: require('../img/film_camera_projector_cinema_media_movie_television_recording_observe.png')
+            src: require('../img/18.png')
         }, {
             id: 19,
-            src: require('../img/finish_banner_destination_result_victory_end.png')
+            src: require('../img/19.png')
         }, {
             id: 20,
-            src: require('../img/flag_signal_nation_identification_start.png')
+            src: require('../img/20.png')
         }, {
             id: 21,
-            src: require('../img/flipchart_flip_chart_training_workshop_course_presentation_meeting.png')
+            src: require('../img/21.png')
         }, {
             id: 22,
-            src: require('../img/hand_sense_touch_action_activity_manual_craft.png')
+            src: require('../img/22.png')
         }, {
             id: 23,
-            src: require('../img/heavy_overstretched.png')
+            src: require('../img/23.png')
         }, {
             id: 24,
-            src: require('../img/helicopter_rescue_help_outside_view_high_level_overview.png')
+            src: require('../img/24.png')
         }, {
             id: 25,
-            src: require('../img/iceberg_obstacle_unconscious_subconscious_concealed_danger_hidden_cold_risk.png')
+            src: require('../img/25.png')
         }, {
             id: 26,
-            src: require('../img/key_solution_tool_opening_opportunity_secret.png')
+            src: require('../img/26.png')
         }, {
             id: 27,
-            src: require('../img/ladder_help_climb_path_up.png')
+            src: require('../img/27.png')
         }, {
             id: 28,
-            src: require('../img/life_rescue_safety_help_hotline.png')
+            src: require('../img/28.png')
         }, {
             id: 29,
-            src: require('../img/light_bulb_idea_inspiration_innovation_thought_invention_brightness.png')
+            src: require('../img/29.png')
         }, {
             id: 30,
-            src: require('../img/lighthouse_orientation_direction_leadership_signal_effect_light_summary_overview.png')
+            src: require('../img/30.png')
         }, {
             id: 31,
-            src: require('../img/lock_safety_security_password.png')
+            src: require('../img/31.png')
         }, {
             id: 32,
-            src: require('../img/magnet_appeal_attract_bait_attraction_energy_strength.png')
+            src: require('../img/32.png')
         }, {
             id: 33,
-            src: require('../img/magnifying_glass_focus_search_detail_specialisation.png')
+            src: require('../img/33.png')
         }, {
             id: 34,
-            src: require('../img/microphone_speaking_information_journalist_media_news_interview_recording.png')
+            src: require('../img/34.png')
         }, {
             id: 35,
-            src: require('../img/mountain_objective_obstacle_challenge.png')
+            src: require('../img/35.png')
         }, {
             id: 36,
-            src: require('../img/paper_document_note_letter_result_minutes_template_instructions.png')
+            src: require('../img/36.png')
         }, {
             id: 37,
-            src: require('../img/picture_frame_scope_border_context_inside.png')
+            src: require('../img/37.png')
         }, {
             id: 38,
-            src: require('../img/puzzle_piece_part_fitting_interlocking_detail_share_collaborate.png')
+            src: require('../img/38.png')
         }, {
             id: 39,
-            src: require('../img/seal_ribbon_award_first_quality_appreciation.png')
+            src: require('../img/39.png')
         }, {
             id: 40,
-            src: require('../img/shopping_trolley_purchase_consumer_product_sales_retail.png')
+            src: require('../img/40.png')
         }, {
             id: 41,
-            src: require('../img/spider_web_networking_trap_structure_obstacle_catch_centre_network_internet.png')
+            src: require('../img/41.png')
         }, {
             id: 42,
-            src: require('../img/sword_battle_victory_aggression_war_threat.png')
+            src: require('../img/42.png')
         }, {
             id: 43,
-            src: require('../img/syringe_medicine_input_injection_healing_drugs_poison.png')
+            src: require('../img/43.png')
         }, {
             id: 44,
-            src: require('../img/target_objective_hit_solution_clarity.png')
+            src: require('../img/44.png')
         }, {
             id: 45,
-            src: require('../img/tent_tribe_family_ritual_home.png')
+            src: require('../img/45.png')
         }, {
             id: 46,
-            src: require('../img/toy_game_play_role_figure_roleplay.png')
+            src: require('../img/46.png')
         }, {
             id: 47,
-            src: require('../img/treasure_chest_reward_price_value_potential_talent_ability_temptation_riches_objective_goal.png')
+            src: require('../img/47.png')
         }, {
             id: 48,
-            src: require('../img/trophy_award_victory_reward_prize_winner_win.png')
+            src: require('../img/48.png')
         }, {
             id: 49,
-            src: require('../img/truck_transportation_logistics_goods_service_delivery_traffic.png')
+            src: require('../img/49.png')
         }, {
             id: 50,
-            src: require('../img/walking_running.png')
+            src: require('../img/50.png')
         }, {
             id: 51,
-            src: require('../img/watering_can_pour_plant_investment_abundance.png')
+            src: require('../img/51.png')
         }
     ],
     tags: [{

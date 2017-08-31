@@ -1,6 +1,6 @@
 'use strict';
 import React, {Component} from "react";
-import {StyleSheet, Text, TouchableHighlight, View} from "react-native";
+import {StyleSheet, Text, View} from "react-native";
 import CardDeck from "../components/CardDeck";
 import Data from './Data';
 
@@ -42,14 +42,8 @@ class CardDeckContainer extends Component {
 
 
     renderCardView(card) {
-        const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
-                <View style={styles.header}>
-                    <TouchableHighlight onPress={() => navigate('Search')}>
-                        <Text style={styles.searchButton}>List</Text>
-                    </TouchableHighlight>
-                </View>
                 <View style={styles.cards}>
                     <CardDeck initialCard={card} getNextCard={this.getNextCard} />
                 </View>
@@ -68,16 +62,6 @@ const styles = StyleSheet.create({
         padding: 100,
         justifyContent: 'center',
         alignItems: 'center'
-    },
-    searchButton: {
-        color: '#111',
-        padding: 10,
-        fontSize: 18
-    },
-    header: {
-        alignItems: 'flex-end',
-        paddingRight: 10,
-        zIndex: 2
     }
 });
 

@@ -7,8 +7,8 @@ import CardDeckContainer from './CardDeckContainer';
 import SearchContainer from './SearchContainer';
 
 const Ikanz = StackNavigator({
-    Cards: { screen: CardDeckContainer },
-    Search: { screen: SearchContainer }
+    Search: { screen: SearchContainer },
+    Cards: { screen: CardDeckContainer }
 });
 
 AppRegistry.registerComponent('Ikanz', () => Ikanz);
