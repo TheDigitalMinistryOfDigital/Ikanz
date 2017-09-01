@@ -6,7 +6,7 @@ class Card extends Component {
     render() {
         return (
             <Animated.View style={[styles.card, this.props.animationStyles]} {...this.props.panResponder.panHandlers}>
-                <Image source={this.props.picture} style={styles.picture} />
+                <Image source={this.props.picture} style={styles.picture} resizeMode={'contain'} />
             </Animated.View>
         );
     }
@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     picture: {
-        width: 280,
-        height: 280
+        width: 260,
+        height: 260
     }
 });
 
